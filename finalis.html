@@ -69,35 +69,19 @@
             margin: 0 auto 30px;
         }
 
-        .finalis-count {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            background: rgba(55, 158, 245, 0.15);
-            border-radius: 16px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-light);
-        }
-
-        .finalis-count i {
-            font-size: 2rem;
-        }
-
         /* Finalis Grid */
         .finalis-section {
             padding: 60px 5% 100px;
         }
 
         .finalis-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .finalis-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
@@ -105,13 +89,14 @@
         .finalis-card {
             background: var(--glass);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 32px 24px;
-            text-align: center;
+            border-radius: 16px;
+            padding: 28px;
             backdrop-filter: blur(20px);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .finalis-card::before {
@@ -120,7 +105,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
+            height: 3px;
             background: var(--gradient);
             transform: scaleX(0);
             transition: transform 0.4s ease;
@@ -131,62 +116,62 @@
         }
 
         .finalis-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--primary-light);
-            box-shadow: 0 20px 40px rgba(55, 158, 245, 0.2);
+            box-shadow: 0 15px 35px rgba(55, 158, 245, 0.2);
         }
 
+        /* Nomor Tim - Lebih Kecil & Rapi */
         .finalis-number {
             position: absolute;
-            top: 16px;
-            right: 20px;
+            top: 20px;
+            right: 24px;
             font-family: 'Space Grotesk', sans-serif;
-            font-size: 3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            opacity: 0.3;
+            color: var(--primary-light);
+            opacity: 0.5;
+            background: rgba(55, 158, 245, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid rgba(55, 158, 245, 0.3);
         }
 
-        .finalis-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            box-shadow: 0 10px 30px rgba(55, 158, 245, 0.4);
-        }
-
-        .finalis-card h3 {
+        /* Nama Tim */
+        .finalis-team-name {
             font-size: 1.4rem;
             margin-bottom: 12px;
+            margin-top: 8px;
             color: var(--text);
+            font-weight: 700;
+            line-height: 1.3;
         }
 
         .finalis-card p {
             color: var(--text-dim);
             font-size: 0.9rem;
             line-height: 1.6;
+            flex-grow: 1;
         }
 
         .finalis-tag {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             padding: 6px 16px;
             background: rgba(55, 158, 245, 0.15);
             border: 1px solid rgba(55, 158, 245, 0.3);
             border-radius: 50px;
             color: var(--primary-light);
             font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 16px;
+            font-weight: 700;
+            margin-top: 20px;
             letter-spacing: 1px;
+            align-self: flex-start;
+        }
+
+        .finalis-tag i {
+            font-size: 0.7rem;
         }
 
         /* CTA Section */
@@ -219,27 +204,27 @@
             }
 
             .finalis-card {
-                padding: 24px 16px;
+                padding: 24px 20px;
             }
 
             .finalis-number {
-                font-size: 2rem;
+                font-size: 1rem;
+                padding: 3px 10px;
             }
 
-            .finalis-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 2rem;
-            }
-
-            .finalis-card h3 {
-                font-size: 1.1rem;
+            .finalis-team-name {
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
             .finalis-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .finalis-number {
+                font-size: 0.9rem;
+                padding: 2px 8px;
             }
         }
     </style>
@@ -282,102 +267,103 @@
         </div>
         <h1>Tim Finalis IT Preneur 2026</h1>
         <p>Selamat kepada 10 tim terbaik yang berhasil lolos ke babak Grand Final Teknovistafest 2026!</p>
-        <div class="finalis-count">
-            <i class="fa-solid fa-users"></i>
-            <span>10 Tim Finalis</span>
-        </div>
     </section>
 
-    <div class="finalis-grid">
-    
-        <!-- Tim 1: Ngedata -->
-        <div class="finalis-card">
-            <div class="finalis-number">01</div>
-            <h3 class="finalis-team-name">Ngedata</h3>
-            <p>Selamat atas pencapaian luar biasa! Terus berkarya dan berinovasi di babak Grand Final.</p>
-            <span class="finalis-tag">FINALIS</span>
+    <!-- FINALIS GRID -->
+    <section class="finalis-section">
+        <div class="finalis-container">
+            <div class="finalis-grid">
+
+                <!-- Tim 1: Ngedata -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#01</span>
+                    <h3 class="finalis-team-name">Ngedata</h3>
+                    <p>Selamat atas pencapaian luar biasa! Terus berkarya dan berinovasi di babak Grand Final.</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 2: ARZEN -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#02</span>
+                    <h3 class="finalis-team-name">ARZEN</h3>
+                    <p>Selamat! Semangat untuk presentasi di Grand Final. Tunjukkan yang terbaik!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 3: Bakso Malang -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#03</span>
+                    <h3 class="finalis-team-name">Bakso Malang</h3>
+                    <p>Selamat! Inovasi kuliner berbasis AI kalian sangat menjanjikan. Good luck!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 4: EduNova -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#04</span>
+                    <h3 class="finalis-team-name">EduNova</h3>
+                    <p>Selamat! Solusi pendidikan berbasis AI kalian patut diacungi jempol!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 5: CCB ONE -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#05</span>
+                    <h3 class="finalis-team-name">CCB ONE</h3>
+                    <p>Selamat! Terus pertahankan semangat inovasi dan kreativitas kalian!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 6: Ventor Team -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#06</span>
+                    <h3 class="finalis-team-name">Ventor Team</h3>
+                    <p>Selamat! Ide bisnis AI kalian sangat visioner. Sukses di Grand Final!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 7: MAGNOLIA -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#07</span>
+                    <h3 class="finalis-team-name">MAGNOLIA</h3>
+                    <p>Selamat! Terus berkembang dan berikan yang terbaik di babak final!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 8: Young Visioner -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#08</span>
+                    <h3 class="finalis-team-name">Young Visioner</h3>
+                    <p>Selamat! Visi besar kalian untuk masa depan teknologi sangat menginspirasi!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 9: Kejar Tayang Sampe Legrek -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#09</span>
+                    <h3 class="finalis-team-name">Kejar Tayang Sampe Legrek</h3>
+                    <p>Selamat! Nama yang unik dan ide yang brilian. Semangat terus!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+                <!-- Tim 10: Serenova -->
+                <div class="finalis-card">
+                    <span class="finalis-number">#10</span>
+                    <h3 class="finalis-team-name">Serenova</h3>
+                    <p>Selamat! Inovasi dan kreativitas kalian luar biasa. Sukses di Grand Final!</p>
+                    <span class="finalis-tag"><i class="fa-solid fa-trophy"></i> FINALIS</span>
+                </div>
+
+            </div>
         </div>
-    
-        <!-- Tim 2: ARZEN -->
-        <div class="finalis-card">
-            <div class="finalis-number">02</div>
-            <h3 class="finalis-team-name">ARZEN</h3>
-            <p>Selamat! Semangat untuk presentasi di Grand Final. Tunjukkan yang terbaik!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 3: Bakso Malang -->
-        <div class="finalis-card">
-            <div class="finalis-number">03</div>
-            <h3 class="finalis-team-name">Bakso Malang</h3>
-            <p>Selamat! Inovasi kuliner berbasis AI kalian sangat menjanjikan. Good luck!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 4: EduNova -->
-        <div class="finalis-card">
-            <div class="finalis-number">04</div>
-            <h3 class="finalis-team-name">EduNova</h3>
-            <p>Selamat! Solusi pendidikan berbasis AI kalian patut diacungi jempol!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 5: CCB ONE -->
-        <div class="finalis-card">
-            <div class="finalis-number">05</div>
-            <h3 class="finalis-team-name">CCB ONE</h3>
-            <p>Selamat! Terus pertahankan semangat inovasi dan kreativitas kalian!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 6: Ventor Team -->
-        <div class="finalis-card">
-            <div class="finalis-number">06</div>
-            <h3 class="finalis-team-name">Ventor Team</h3>
-            <p>Selamat! Ide bisnis AI kalian sangat visioner. Sukses di Grand Final!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 7: MAGNOLIA -->
-        <div class="finalis-card">
-            <div class="finalis-number">07</div>
-            <h3 class="finalis-team-name">MAGNOLIA</h3>
-            <p>Selamat! Terus berkembang dan berikan yang terbaik di babak final!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 8: Young Visioner -->
-        <div class="finalis-card">
-            <div class="finalis-number">08</div>
-            <h3 class="finalis-team-name">Young Visioner</h3>
-            <p>Selamat! Visi besar kalian untuk masa depan teknologi sangat menginspirasi!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 9: Kejar Tayang Sampe Legrek -->
-        <div class="finalis-card">
-            <div class="finalis-number">09</div>
-            <h3 class="finalis-team-name">Kejar Tayang Sampe Legrek</h3>
-            <p>Selamat! Nama yang unik dan ide yang brilian. Semangat terus!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-        <!-- Tim 10: Serenova -->
-        <div class="finalis-card">
-            <div class="finalis-number">10</div>
-            <h3 class="finalis-team-name">Serenova</h3>
-            <p>Selamat! Inovasi dan kreativitas kalian luar biasa. Sukses di Grand Final!</p>
-            <span class="finalis-tag">FINALIS</span>
-        </div>
-    
-    </div>
+    </section>
 
     <!-- CTA SECTION -->
     <section class="finalis-cta">
         <h2>Selamat Kepada Seluruh Finalis! 🎉</h2>
         <p>Grand Final akan dilaksanakan pada <strong>26 September 2026</strong> di Universitas Airlangga Kampus C,
             Surabaya. Persiapkan presentasi terbaik kalian!</p>
-        <div class="comp-cta-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
             <a href="competition.html" class="btn btn-primary btn-lg">
                 <i class="fa-solid fa-info-circle"></i> Info Kompetisi
             </a>
@@ -423,6 +409,17 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>
